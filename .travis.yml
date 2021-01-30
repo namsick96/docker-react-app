@@ -13,12 +13,13 @@ script:
   - docker run -e CI=true namsick96/docker-react-app npm run test -- --coverage
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
-  region: "ap-northeast-2"
-  app: "docker-react-app"
-  env: "Dockerreactapp-env"
-  bucket_name: "elasticbeanstalk-ap-northeast-2-807459427734"
-  bucket_path: "docker-react-app"
+  region: ap-northeast-2
+  app: docker-react-app2
+  env: Dockerreactapp2-env
+  bucket_name: elasticbeanstalk-ap-northeast-2-807459427734
+  bucket_path: docker-react-app2
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
